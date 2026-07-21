@@ -31,4 +31,5 @@ EXPOSE 80
 CMD php artisan config:clear \
     && php artisan migrate --force \
     && php artisan storage:link || true \
+    && php artisan admin:bootstrap "${ADMIN_EMAIL:-alvin@example.com}" "${ADMIN_NAME:-Alvin Jay Cornejo}" "${ADMIN_PASSWORD:-changeme123}" || true \
     && apache2-foreground
