@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Arch gateway -->
+  <path d="M 18 102 L 18 58 C 18 26 36 12 60 12 C 84 12 102 26 102 58 L 102 102"
+        fill="none" stroke="#122b52" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Star on top of the arch -->
+  <path d="M60 0 L63.5 8.2 L72.4 9 L65.7 14.9 L67.7 23.6 L60 19 L52.3 23.6 L54.3 14.9 L47.6 9 L56.5 8.2 Z"
+        fill="#f5a623"/>
+
+  <!-- Inner circle -->
+  <circle cx="60" cy="66" r="27" fill="#d7ecfa"/>
+
+  <!-- Bed icon -->
+  <g fill="#122b52">
+    <!-- headboard -->
+    <rect x="37" y="54" width="7" height="21" rx="2"/>
+    <!-- bed frame / mattress -->
+    <rect x="37" y="69" width="46" height="9" rx="3"/>
+    <!-- pillow -->
+    <rect x="41" y="58" width="13" height="8" rx="3.5"/>
+    <!-- legs -->
+    <rect x="39" y="78" width="3.5" height="6" rx="1"/>
+    <rect x="77.5" y="78" width="3.5" height="6" rx="1"/>
+  </g>
+</svg>
