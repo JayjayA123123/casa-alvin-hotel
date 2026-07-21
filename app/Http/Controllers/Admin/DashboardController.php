@@ -24,11 +24,13 @@ class DashboardController extends Controller
 
         // Bookings created per month, Jan -> Dec, for the current year.
         // Used to draw the "Bookings Overview" line chart.
+        // Grouped in PHP (instead of a raw MONTH()/EXTRACT() SQL call) so this
+        // works the same on MySQL (local) and PostgreSQL (production).
         $year = now()->year;
-        $bookingsPerMonth = Booking::selectRaw('MONTH(created_at) as month, COUNT(*) as total')
-            ->whereYear('created_at', $year)
-            ->groupBy('month')
-            ->pluck('total', 'month');
+        $bookingsPerMonth = Booking::whereYear('created_at', $year)
+            ->get(['created_at'])
+            ->groupBy(fn ($booking) => (int) $booking->created_at->format('n'))
+            ->map->count();
 
         $chartLabels = [];
         $chartData = [];
